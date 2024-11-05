@@ -1,0 +1,19 @@
+.cards {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: left;
+    margin-top: 20px;
+    overflow-y: auto;
+    padding-bottom: 10px;
+}
+
+.fees {
+    text-align: center;
+    background-color: #E74C3C;
+    color: yellow;
+    border-radius: 20px;
+    font-size: 1.5rem;
+    width: 600px;
+    margin: 6px auto;
+    padding: 8px;
+}

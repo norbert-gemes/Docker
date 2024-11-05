@@ -1,0 +1,42 @@
+<div class="card">
+    <img [src]="model?.image" alt="">
+    <div class="date">{{model?.date}}</div>
+    <h3>{{model?.name}}</h3>
+    <div class="address">
+        <img class="mapmark" src="images/mapmark.svg">
+        <span>{{model?.from}}</span>
+    </div>
+    <div class="description">
+        @for (info of model?.info; track $index) {
+            <p>{{info}}</p>
+        }
+    </div>
+    <div class="distances">
+        @for (distance of model?.distances; track $index) {
+            <div class="distance">
+                <h4>{{distance.name}}</h4>
+                <table>
+                    <tr>
+                        <td>Nevezési díj:</td>
+                        <td>{{distance.fee}} Ft</td>
+                        <td>Távolság:</td>
+                        <td>{{distance.distance}} km</td>
+                    </tr>
+                    <tr>
+                        <td>Szintidő:</td>
+                        <td>{{distance.maxtime}} óra</td>
+                        <td>Szint:</td>
+                        <td>{{distance.level}} m</td>
+                    </tr>
+                </table>
+                <div class="apply">
+                    @if (!distance.applied) {
+                        <button (click)="apply(distance, true)">Jelentkezem</button>
+                    } @else {
+                        <button (click)="apply(distance, false)">Jelentkezés visszavonása</button>
+                    }
+                </div>
+            </div>
+        }
+    </div>
+</div>

@@ -1,0 +1,17 @@
+<div class="card">
+    <img [src]="model?.image" alt="">
+    <div class="date">{{model?.date}}</div>
+    <h3>{{model?.name}}</h3>
+    <div class="address">
+        <img class="mapmark" src="images/mapmark.svg">
+        <span>{{model?.from}}</span>
+    </div>
+    <div class="description">
+        @for (info of model?.info; track $index) {
+            <p>{{info}}</p>
+        }
+    </div>
+    <div class="details">
+        <button (click)="details()">Részletek</button>
+    </div>
+</div>

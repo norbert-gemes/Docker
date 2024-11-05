@@ -1,0 +1,13 @@
+<div class="cards">
+    @for (challenge of challenges; track $index) {
+        <app-challenge-item [model]="challenge" (select)="selectedChallenge = $event"></app-challenge-item>
+    }
+</div>
+
+<div class="fees">
+    Az eddigi jelentkezések össz nevezési díja: {{totalFee}} Ft
+</div>
+
+@if (selectedChallenge) {
+    <app-challenge-details [model]="selectedChallenge" (applyChanged)="calculateTotalFee()"></app-challenge-details>
+}
