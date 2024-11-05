@@ -16,5 +16,5 @@ jobs:
     - uses: actions/checkout@v4
     - name: Build the Docker image
       run:  |
-        docker build . --file Dockerfile --tag cr.jedlik.cloud/html-gemesnorbert:$(date +%s)
-        docker push cr.jedlik.cloud/html-gemesnorbert:$(date +%s)
+        docker build . --file Dockerfile --tag cr.jedlik.cloud/html-gemesnorbert:0.1
+        docker push cr.jedlik.cloud/html-gemesnorbert:0.1
